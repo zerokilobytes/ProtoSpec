@@ -1,7 +1,57 @@
-/*
- * Empty Stylesheet file.
- */
+/******************************************Metro Extended*******************************/
 
-.mainFxmlClass {
+/***************************************Menu*******************************/
+.protospect .label-header{
+    -fx-font-size: 30pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
 
+.protospect .menu-bar{
+	-fx-background-color: transparent;
+	-fx-font-family: "Segoe UI Light";
+	-fx-font-size: 22pt;
+}
+.protospect .menu-item{
+    -fx-background-color: transparent;
+    -fx-padding: 0.666666em 0.999999em 0.4999995em 0.999999em;   /*6 12 6 12 */
+}
+
+.protospect .menu-item .label {
+    -fx-text-fill: white;
+}
+
+.protospect .menu-item:focused {
+     -fx-background-color: darkgray;
+}
+
+.protospect .menu-item:focused .label {
+    -fx-text-fill: blue;
+}
+
+.protospect .context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: black;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+}
+
+/***********************************Split Panel************************************/
+.split-pane:horizontal > * > .split-pane-divider {
+	-fx-border-color: transparent -fx-base transparent -fx-base;
+	-fx-background-color: transparent, derive(-fx-base,10%);
+	-fx-background-insets: 0, 0 1 0 1;
+}
+.split-pane:vertical > * > .split-pane-divider {
+	-fx-border-color: transparent -fx-base transparent -fx-base;
+	-fx-background-color: transparent, derive(-fx-base,10%);
+	-fx-background-insets: 0, 0 1 0 1;
+}
+.split-pane *.vertical-grabber {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-shape: " ";
 }

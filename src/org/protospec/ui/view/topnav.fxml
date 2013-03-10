@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="1024.0" styleClass="background, protospect" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <Label id="header" layoutX="72.0" layoutY="10.0" styleClass="label-header" text="Protocol Inspector" underline="false" />
+    <MenuBar prefHeight="50.0" prefWidth="245.0" styleClass="protospect-menu-bar" useSystemMenuBar="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File" />
+        <Menu mnemonicParsing="false" text="Edit" />
+        <Menu mnemonicParsing="false" text="Help" />
+      </menus>
+    </MenuBar>
+  </children>
+  <stylesheets>
+    <URL value="@../../resource/css/JMetroDarkTheme.css" />
+    <URL value="@../../resource/css/protospec.css" />
+  </stylesheets>
+</AnchorPane>

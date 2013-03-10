@@ -8,9 +8,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="org.protospec.ui.controller.ProtospecController">
-  <children>
-    <fx:include source="page.fxml" layoutX="0.0" layoutY="0.0" />
-  </children>
   <stylesheets>
     <URL value="@../../resource/css/protospec.css" />
   </stylesheets>
