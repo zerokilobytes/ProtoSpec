@@ -1,31 +1,22 @@
 package org.protospec;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.DepthTest;
-import javafx.scene.Parent;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import protospect.controls.WindowResizeButton;
 
 public class App extends Application {
 
-     private BorderPane root;
-    private WindowResizeButton windowResizeButton;
+    private Group root;
+    //private WindowResizeButton windowResizeButton;
     private Scene scene;
 
     public static void main(String[] args) {
@@ -34,43 +25,30 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        StackPane layerPane = new StackPane();
-
-        stage.initStyle(StageStyle.UNDECORATED);
-        windowResizeButton = new WindowResizeButton(stage, 1020, 700);
         // create root
-        root = new BorderPane() {
-            @Override
-            protected void layoutChildren() {
-                super.layoutChildren();
-                windowResizeButton.autosize();
-                windowResizeButton.setLayoutX(getWidth() - windowResizeButton.getLayoutBounds().getWidth());
-                windowResizeButton.setLayoutY(getHeight() - windowResizeButton.getLayoutBounds().getHeight());
-            }
-        };
-        
-        root.getStyleClass().add("application");
-
+        root = new Group();
         root.setId("root");
-        layerPane.setDepthTest(DepthTest.DISABLE);
-        layerPane.getChildren().add(root);
 
-        windowResizeButton.setManaged(false);
-        this.root.getChildren().add(windowResizeButton);
-        
-        scene = new Scene(layerPane, 1020, 700, false);
+        setMenu(stage);
+        scene = new Scene(root, 600, 600, false);
         scene.getStylesheets().add(App.class.getResource("protospec.css").toExternalForm());
 
-         stage.setScene(scene);
+        stage.setScene(scene);
         stage.show();
+    }
 
+    private void setMenu(Stage stage) {
+        MenuBar menuBar = new MenuBar();
+        menuBar.prefWidthProperty().bind(stage.widthProperty());
+        root.getChildren().add(menuBar);
 
+        // File menu - new, save, exit
+        Menu menu = new Menu("File");
+        menu.getItems().add(new MenuItem("New"));
+        menu.getItems().add(new MenuItem("Save"));
+        menu.getItems().add(new SeparatorMenuItem());
+        menu.getItems().add(new MenuItem("Exit"));
 
-        /*stage.setTitle("Protocol Inspector");
-         root = FXMLLoader.load(getClass().getResource("protospec.fxml"));
-         root.setId("root");
-
-         stage.setScene(new Scene(root, 1020, 700));
-         stage.show();*/
+        menuBar.getMenus().add(menu);
     }
 }
