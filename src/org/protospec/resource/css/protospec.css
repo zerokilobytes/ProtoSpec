@@ -11,7 +11,7 @@
 .protospect .menu-bar{
 	-fx-background-color: transparent;
 	-fx-font-family: "Segoe UI Light";
-	-fx-font-size: 22pt;
+	-fx-font-size: 18pt;
 }
 .protospect .menu-item{
     -fx-background-color: transparent;
